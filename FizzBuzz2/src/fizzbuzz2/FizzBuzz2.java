@@ -8,20 +8,41 @@ package fizzbuzz2;
  *
  * @author Lecturer
  */
-public class FizzBuzz2 {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
+public class FizzBuzz2 {
     public static void main(String[] args) {
-        /*
-        FizzBuzz
-        Print the numbers between 1 and 150
-        If a number is divisible by 3, print Fizz
-        If a number is divisible by 5, print Buzz
-        If a number is divisible by both, print FizzBuzz
+        Scanner scanner = new Scanner(System.in);
         
-        */
+        while (true) {
+            // ask for a number between 1 and 150
+            System.out.print("Please type a number between 1 and 150: ");
+            int number = scanner.nextInt();
+            
+            
+            // verifies if the number is between 1 and 150
+            if (number >= 1 && number <= 150) {
+                // verifies if the number is divided by 3 and 5
+                if (number % 3 == 0 && number % 5 == 0) {
+                    System.out.println("FizzBuzz");
+                }
+                // verifies if the number is divided by 3
+                else if (number % 3 == 0) {
+                    System.out.println("Fizz");
+                }
+                // verifies if the number is divided by 5
+                else if (number % 5 == 0) {
+                    System.out.println("Buzz");
+                }
+                // if its not divided by any
+                else {
+                    System.out.println("Your number is not divided by any.");
+                }
+                break; 
+            } 
+            scanner.close();
+        }
+        
     }
-    
 }
+
